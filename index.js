@@ -81,6 +81,7 @@ app.use('/messages', messageRoutes);
 io.on("connection", (socket) => {
   console.log("A user connected: ", socket.id);
 
+  //socket
   // Joining a room
   socket.on("join_room", (data) => {
     socket.join(data);
