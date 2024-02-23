@@ -109,7 +109,7 @@ io.on("connection", (socket) => {
 
 // Connect to the database
 mongoose
-  .connect('mongodb+srv://marksarfo87:admin@cluster0.q7a5lbl.mongodb.net/?retryWrites=true&w=majority', {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(() => {
