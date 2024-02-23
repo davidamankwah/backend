@@ -109,11 +109,11 @@ io.on("connection", (socket) => {
 
 // Connect to the database
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect('mongodb+srv://marksarfo87:admin@cluster0.q7a5lbl.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(() => {
     // Start the server
-    const PORT = process.env.PORT || 4001;
+    const PORT = 4000 || 4001;
     server.listen(PORT, () => console.log(`Server listening on port ${PORT}`) );
   }).catch((error) => console.log(`${error} did not connect`))
