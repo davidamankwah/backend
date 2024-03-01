@@ -18,7 +18,7 @@ try {
       }
 
     // Verify the token using the JWT_SECRET from the environment variables
-    const verified = jwt.verify(token, 'somesuperhardstringtoguess');
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
 
     // Attach the verified user information to the request object
     req.user = verified;
